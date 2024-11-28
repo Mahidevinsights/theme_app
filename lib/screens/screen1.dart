@@ -35,8 +35,19 @@ class Screen1 extends StatelessWidget {
               itemCount: stocks.length,
               itemBuilder: (context, index) {
                 final stock = stocks[index];
-                return Card(
-                  color: AppColors.background,
+                return Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.background, // Background color of the card
+                    border: Border.all(
+                      color: stock["change"]!.startsWith('-')
+                          ? Colors.red.withOpacity(0.5)
+                          : Colors.green.withOpacity(0.5),
+                      width: 2.0, // Border width
+                    ),
+                    borderRadius: BorderRadius.circular(8.0), // Rounded corners
+                  ),
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 8.0, vertical: 4.0), // Margin
                   child: ListTile(
                     title: Text(
                       stock["name"]!,

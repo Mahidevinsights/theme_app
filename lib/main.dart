@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             title: 'Theme Toggle App',
             theme: theme,
-
             // theme: AppColors.isDarkTheme
             //     ? AppTheme.darkTheme
             //     : AppTheme.lightTheme,
